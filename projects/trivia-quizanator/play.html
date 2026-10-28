@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title -->
+  <title>Play | Trivia Quizanator</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Trivia Quizanator</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a href="./generate.html">Generate</a>
+        </li>
+        <li>
+          <a href="./play.html" class="active">Play</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page content -->
+  <main>
+    
+    <section id="quizanator">
+      <p id="loading" hidden>Loading...</p>
+      <div id="question" hidden>
+        <h2 id="question-name">Question Title</h2>
+        <div id="question-options">
+          <!-- Question checkboxes are dynamically generated -->
+        </div>
+        <button class="button gap" id="question-button">Next</button>
+        <progress id="question-progress" max="5" value="0">1 / 5</progress>
+      </div>
+      <div id="results" hidden>
+        <h2 id="results-message">Results Title</h2>
+        <p id="results-details">You got 1 out 5 correct</p>
+        <p>Playing: <span class="italic" id="results-challenge">Quiz Name</span></p>
+        <ul>
+          <li>
+            <button class="link" id="results-button">Replay</button>
+          </li>
+          <li>
+            <a class="link" href="./index.html">View More Quizzes</a>
+          </li>
+          <li>
+            <a class="link" href="./generate.html">Build Your Own</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Trivia Quizanator</p>
+    <p>All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="./main.js"></script>
+  
+</body>
+</html>

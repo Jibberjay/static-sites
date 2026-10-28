@@ -1,0 +1,162 @@
+/* styles.css */
+
+
+/* Theme colors */
+:root {
+  --color-primary: #18a1db;
+  --color-primary-dark: #068ec8;
+  --color-secondary: #f69841;
+  --color-secondary-dark: #d97d27;
+  --color-text: #0a0a0a;
+  --color-bg: #fcfcfc;
+  --color-card: #dddddd;
+  --color-card-dark: #bbbbbb;
+}
+
+
+/* Header styles */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+header ul {
+  display: block flex;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+header li {
+  margin-bottom: 4px;
+  font-size: 1.1rem;
+}
+header li:hover {
+  border-bottom: solid 4px currentColor;
+  margin-bottom: 0;
+}
+header li a {
+  display: block;
+  padding: 1rem;
+}
+header li:has(a.active) {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-weight: bolder;
+}
+
+/* Page styles */
+main {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: min(100%, 800px);
+  margin: 1rem auto 1.5rem auto;
+  min-height: 80vh;
+}
+progress {
+  background-color: var(--color-card);
+  border: none;
+}
+fieldset {
+  border: none;
+}
+input,
+label,
+fieldset {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
+}
+
+/* Utility classes */
+.emoji {
+  font-variant-emoji: emoji;
+}
+.light {
+  opacity: 0.5;
+  font-weight: 300;
+}
+.italic {
+  font-style: italic;
+}
+.link {
+  display: inline;
+  border: none;
+  background: none;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: color-mix(in srgb, currentColor, transparent 50%);
+}
+.link:hover,
+.link:active {
+  text-decoration-thickness: 3px;
+  text-decoration-color: currentColor;
+}
+.button {
+  display: block;
+  cursor: pointer;
+  background-color: var(--color-secondary);
+  color: var(--color-bg);
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 12px;
+}
+.button:hover {
+  background-color: var(--color-secondary-dark);
+}
+.button.active {
+  background-color: var(--color-primary);
+}
+.button.active:hover {
+  background-color: var(--color-primary-dark);
+}
+.gap {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.pad {
+  padding: 1rem;
+}
+.grid {
+  display: block grid;
+  grid-template-columns: repeat(auto-fit, 240px);
+  gap: 1rem;
+}
+.card {
+  display: block;
+  background-color: var(--color-card);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+.card:hover {
+  background-color: var(--color-card-dark);
+}
+.card div.emoji {
+  font-size: 100px;
+}
+.card p:not(p.light) {
+  font-weight: bold;
+}
+.pair {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--color-primary);
+  padding: 1.5rem;
+}
+footer p {
+  text-align: center;
+}
