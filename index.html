@@ -16,37 +16,45 @@
     *::after {
       box-sizing: border-box;
     }
-    *:not(dialog) {
-      margin: 0;
-    }
     * {
       padding: 0;
+      margin: 0;
       border: none;
     }
     :root {
       font-size: 112.5%;
+      --green: #33ff00;
+      --dark-green: #006400;
+      --black: #151515;
     }
     html {
-      color-scheme: light dark;
+      background: var(--black);
+      color: var(--green);
+      color-scheme: dark;
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
       -webkit-font-smoothing: antialiased;
     }
-    @media (prefers-reduced-motion: no-preference) {
-      html:focus-within {
-        scroll-behavior: smooth;
-      }
-    }
     :target {
       scroll-margin: 15vh;
     }
+    ::selection {
+      background: var(--dark-green);
+      color: var(--black);
+    }
     body {
-      min-block-size: 100svh;
-      font-family: sans-serif;
-      line-height: 1.5;
+      max-width: 50rem;
+      min-height: 100svh;
+      margin: auto;
+      font-family: ui-monospace, monospace;
+      line-height: 1.4;
       tab-size: 2;
       word-break: break-word;
       overflow-wrap: break-word;
+    }
+    * + * {
+      margin: 0;
+      margin-top: 1rem;
     }
     [disabled] {
       cursor: not-allowed;
@@ -63,39 +71,16 @@
     h4,
     h5,
     h6 {
-      text-wrap: balance;
-      line-height: 1.3;
-    }
-    p,
-    li,
-    dd {
-      text-wrap: pretty;
+      font-weight: bold;
+      font-size: 1rem;
     }
     ul,
     ol {
       list-style-position: inside;
       list-style-type: none;
     }
-    hr {
-      border-style: solid;
-      border-width: 2px 0 0;
-      margin-block: 2rem;
-      color: inherit;
-    }
-    img,
-    video,
-    canvas,
-    iframe {
-      display: block;
-      max-inline-size: 100%;
-      block-size: auto;
-      border: none;
-    }
-    img,
-    canvas {
-      font-style: italic;
-      line-height: 1.5;
-      font-size: 1rem;
+    .list {
+      list-style-type: disc;
     }
     input,
     select,
@@ -109,26 +94,57 @@
     button {
       cursor: pointer;
     }
+    .link {
+      text-decoration-thickness: 2px;
+    }
+    .link, .link:link {
+      color: var(--green);
+    }
+    .link:hover, .link:active {
+      color: var(--dark-green);
+    }
+    .button {
+      display: inline-block;
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+    .button:before {
+      content: "[";
+      color: inherit;
+    }
+    .button:after {
+      content: "]";
+      color: inherit;
+    }
+    .button, .button:link {
+      color: var(--green);
+    }
+    .button:hover, .button:active {
+      color: var(--dark-green);
+    }
   </style>
 
 </head>
 <body>
-
-  <h1>Projects</h1>
-
+  <h1>Static Site Projects</h1>
   <p>I've assembled a list of projects I created for school. There's plenty of info available, including live previews and full code downloads, but if you're having trouble you can always check out the project on <a class="link" href="https://github.com/Jibberjay/static-sites/" target="_blank">GitHub</a>.</p>
-  
+  <ul class="list">
+    <li>
+      <a class="link" href="#adventura-travel-club">Adventura Travel Club</a>
+    </li>
+  </ul>
   <ul>
     <li>
       <article>
-        <h2>Adventura Travel Club</h2>
+        <h2 id="adventura-travel-club">Adventura Travel Club</h2>
         <a class="button" target="_blank" href="/projects/adventura-travel-club/">Live Preview</a>
         <a class="button" target="_blank" href="https://github.com/Jibberjay/static-sites/tree/main/projects/adventura-travel-club">View on GitHub</a>
-        <a class="button" download filename="adventura-travel-club" href="/">Code Download</a>
-        <p>Hello, world!</p>
+        <a class="button" download href="/projects/adventura-travel-club.zip">Code Download</a>
+        <p>This was my final project in my Web Design 2 class, and it's one of my favorites. For this one I was given a fairly detailed design brief: the color scheme, fonts, and copy text were already set. My job was to interpret the goals stated in the brief and build a layout to fit it all. After making a detailed mockup to iron out the design quirks, I wrote up the code. The final result is a touch busy, but it works!</p>
+        <p>My instructor had a lot to say about this one. His feedback called it &ldquo;by far the most technically sophisticated submission of the class,&rdquo; specifically noting (among other things) that &ldquo;the CSS architecture is genuinely professional&rdquo; and &ldquo;shows an experienced mindset.&rdquo;</p>
+        <p>I'd like to draw attention to a few key items here. The hero section has some pretty clever engineering: the hiking photo will likely draw your eye first, but notice how the &ldquo;Join the Club&rdquo; button is slightly transparent on the side, letting the sunlight beam through. Hover it, though, and solid color is reestablished. The design brief called for a similar button to appear in the navbar, which would compete for attention and ultimately be too distracting. So I opted for a neat compromise that makes use of the new scroll-driven animations in CSS. Initially the button blends in to look like just another navbar link. But scroll down and it gradually morphs into the bold referral button you'd expect. By the way, the form it links to is 100% useable <em>without</em> JavaScript. But I recomend using it with JS for a fun confetti surprise :) You'll also find custom highlight and scrollbar colors and progress-enhancement-friendly squricle borders. It's a small site, but it really packs a lot in!</p>
       </article>
     </li>
   </ul>
-
 </body>
 </html>
