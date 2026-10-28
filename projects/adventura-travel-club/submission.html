@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title and favicon -->
+  <title>Thanks for joining! | Adventura Travel Club</title>
+  <link rel="icon" href="./assets/adventura-travel-club-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+
+    <!-- Header logo -->
+    <a class="logo" href="./">
+      <img src="./assets/adventura-travel-club-logo.png" width="70" height="70" alt="Adventura Travel Club logo">
+      <div class="logo-text">
+        <div class="logo-text-heading">Adventura</div>
+        <div class="logo-text-tagline">Travel Club</div>
+      </div>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Primary navigation">
+      <ul>
+        <li>
+          <a href="./#adventures">Browse Packages</a>
+        </li>
+        <li>
+          <a href="./#benefits">Why Adventura</a>
+        </li>
+        <li>
+          <a href="./#testimonials">Member Stories</a>
+        </li>
+        <li class="navbar-button">
+          <a href="./#join">Join the Club</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile menu -->
+    <button class="bi bi-list navbar-toggle" aria-label="Open menu" popovertarget="mobile-header" popovertargetaction="show"></button>
+    <div class="header" id="mobile-header" popover="auto">
+      <div>
+        <img src="./assets/adventura-travel-club-logo.png" width="70" height="70" alt="Adventura Travel Club logo">
+        <button class="bi bi-x-lg navbar-toggle" aria-label="Close menu" popovertarget="mobile-header" popovertargetaction="hide"></button>
+      </div>
+      <nav class="mobile-navbar" aria-label="Primary navigation">
+        <ul>
+          <li>
+            <a href="./#adventures" onclick="document.getElementById('mobile-header').hidePopover();">Browse Packages</a>
+          </li>
+          <li>
+            <a href="./#benefits" onclick="document.getElementById('mobile-header').hidePopover();">Why Adventura</a>
+          </li>
+          <li>
+            <a href="./#testimonials" onclick="document.getElementById('mobile-header').hidePopover();">Member Stories</a>
+          </li>
+          <li class="mobile-navbar-button">
+            <a href="./#join" onclick="document.getElementById('mobile-header').hidePopover();">Join the Club</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="submission-card body-font color-primary-dark bg-primary-light">
+
+    <!-- Submission alert -->
+    <main>
+
+      <h1 class="center">Congrats, you're in!</h1>
+
+      <!-- No JS? No problem! -->
+      <noscript>
+        <p class="submission-p">Welcome! You've officially joined Adventura Travel Club. Your journey awaits!</p>
+        <p class="submission-p">An email was sent to the address on file. It should appear within a few minutes. It'll contain information on how to activate your account and start planning your next big adventure!</p>
+      </noscript>
+
+      <!-- Personalized submission receipt -->
+      <div id="js-hidden-card" hidden>
+        <p class="submission-p">Welcome, <strong class="js-name">...</strong>! You've officially joined Adventura Travel Club. Your journey awaits!</p>
+        <p class="submission-p">An email was sent to <em class="js-email">...</em>. You should recieve it within a few minutes. It'll contain information on how to activate your account and start planning your next big adventure!</p>
+      </div>
+
+      <a class="button bg-primary-em color-primary-light" href="./">Go Back Home</a>
+
+    </main>
+
+    <!-- Email note -->
+    <aside class="callout left">
+      <p><strong>Email not going through?</strong> Give it a few minutes&mdash; sometimes our mail servers are busy and need a while to process your request.</p>
+      <p>Still nothing? Check your <strong>spam</strong> and <strong>junk</strong> folders to see if it got misplaced, and double-check that you gave us the right <strong>email address</strong>. If you still can't find it, go ahead and contact our friendly <a class="link color-primary-em selection-primary-dark" href="./">support team</a>.</p>
+    </aside>
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <nav aria-label="Sitemap navigation">
+      <a class="link" href="./">Back to Home</a>
+    </nav>
+    <p><small class="light hoverlight">&copy; 2026 Adventura Travel Club</small></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+  <script>
+
+    // Get form details
+    const url = new URL(window.location.href);
+    const name = url.searchParams.get("name");
+    const email = url.searchParams.get("email");
+
+    if (name && email) {
+      // Fill in the blanks
+      const names = document.getElementsByClassName("js-name");
+      const emails = document.getElementsByClassName("js-email");
+      for (let i = 0; i < names.length; i++) {
+        names[i].textContent = name;
+      }
+      for (let i = 0; i < emails.length; i++) {
+        emails[i].textContent = email;
+      }
+      document.getElementById("js-hidden-card").removeAttribute("hidden");
+      // Plus a fun surprise...
+      const same = {origin: {y: 0.7}, disableForReducedMotio: true, colors: ["#4a506a", "#f37151", "#3e6a77", "#ff9251", "#0098c9"]};
+      setTimeout(function() {
+        confetti({...same, particleCount: 50, spread: 26, startVelocity: 55});
+        confetti({...same, particleCount: 40, spread: 60, startVelocity: 55});
+        confetti({...same, particleCount: 70, spread: 100, decay: 0.91, scalar: 0.8});
+        confetti({...same, particleCount: 20, spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2});
+        confetti({...same, particleCount: 20, spread: 120, startVelocity: 45});
+      }, 1500);
+    } else {
+      // Or redirect back home
+      document.location.href = "./";
+    }
+  </script>
+  
+</body>
+</html>

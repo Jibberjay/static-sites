@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title and favicon -->
+  <title>Adventura Travel Club</title>
+  <link rel="icon" href="./assets/adventura-travel-club-logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+
+    <!-- Header logo -->
+    <a class="logo" href="#top">
+      <img src="./assets/adventura-travel-club-logo.png" width="70" height="70" alt="Adventura Travel Club logo">
+      <div class="logo-text">
+        <div class="logo-text-heading">Adventura</div>
+        <div class="logo-text-tagline">Travel Club</div>
+      </div>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Primary navigation">
+      <ul>
+        <li>
+          <a href="#adventures">Browse Packages</a>
+        </li>
+        <li>
+          <a href="#benefits">Why Adventura</a>
+        </li>
+        <li>
+          <a href="#testimonials">Member Stories</a>
+        </li>
+        <li class="navbar-button">
+          <a href="#join">Join the Club</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile menu -->
+    <button class="bi bi-list navbar-toggle" aria-label="Open menu" popovertarget="mobile-header" popovertargetaction="show"></button>
+    <div class="header" id="mobile-header" popover="auto">
+      <div>
+        <img src="./assets/adventura-travel-club-logo.png" width="70" height="70" alt="Adventura Travel Club logo">
+        <button class="bi bi-x-lg navbar-toggle" aria-label="Close menu" popovertarget="mobile-header" popovertargetaction="hide"></button>
+      </div>
+      <nav class="mobile-navbar" aria-label="Primary navigation">
+        <ul>
+          <li>
+            <a href="#adventures" onclick="document.getElementById('mobile-header').hidePopover();">Browse Packages</a>
+          </li>
+          <li>
+            <a href="#benefits" onclick="document.getElementById('mobile-header').hidePopover();">Why Adventura</a>
+          </li>
+          <li>
+            <a href="#testimonials" onclick="document.getElementById('mobile-header').hidePopover();">Member Stories</a>
+          </li>
+          <li class="mobile-navbar-button">
+            <a href="#join" onclick="document.getElementById('mobile-header').hidePopover();">Join the Club</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="body-font color-primary-dark bg-primary-light">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Unlock Your Next Adventure with Adventura Travel Club</h1>
+      <p class="hero-tagline">For the bold. For the curious. For the free.</p>
+      <a class="hero-button" href="#join">Join the Club</a>
+    </section>
+
+    <!-- Brief info -->
+    <section>
+      <h2>More than a trip. <span class="color-primary-em selection-primary-dark">A way of life.</span></h2>
+      <p class="callout right">Adventura was founded by people who believe the best stories come from the road less traveled. We are not a travel agency. <strong>We are a community of adventurers who plan, share, and experience the world's most extraordinary destinations together.</strong></p>
+    </section>
+
+    <!-- Adventures -->
+    <section>
+      <h2 id="adventures">Explore Our Most Popular Adventures</h2>
+      <div class="card-grid pad">
+        <article class="card round bg-primary-dark color-primary-light">
+          <h3 class="selection-primary-em">End of the World Trek</h3>
+          <p class="tagline center selection-primary-em">10 Days &middot; Chile &middot; $3200</p>
+          <img class="top selection-primary-em" src="./assets/end-of-the-world-trek.jpg" width="810" height="540" alt="Towering snow-capped mountains rise above three intrepid hikers traversing a massive glacier">
+          <p class="textpad selection-primary-em">Cross glacial fields, traverse dramatic ridgelines, and camp beneath the iconic Towers at sunrise. Guided. All gear included.</p>
+          <button class="button bottomgap bg-primary-em color-primary-light" onclick="alert('To learn more, join Adventura Travel Club!');">Learn More</button>
+        </article>
+        <article class="card round bg-primary-em color-primary-light">
+          <h3 class="selection-secondary-dark">Morocco & Medina Immersion</h3>
+          <p class="tagline center selection-secondary-dark">8 Days &middot; Morocco &middot; $2650</p>
+          <img class="top selection-secondary-dark" src="./assets/morocco-medina-immersion.jpg" width="810" height="534" alt="An arid desert landscape, backed by the orange hue of the setting sun">
+          <p class="textpad selection-secondary-dark">Wind through ancient souks, overnight in Saharan camps under the stars, and trek the foothills of the Atlas range with local Berber guides.</p>
+          <button class="button bottomgap bg-secondary-dark color-primary-light" onclick="alert('To learn more, join Adventura Travel Club!');">Learn More</button>
+        </article>
+        <article class="card round bg-secondary-dark color-primary-light">
+          <h3 class="selection-primary-dark">Jungle to Coast</h3>
+          <p class="tagline center selection-primary-dark">7 Days &middot; Costa Rica &middot; $2100</p>
+          <img class="top selection-primary-dark" src="./assets/jungle-to-coast.jpg" width="810" height="540" alt="Stunningly smooth rock formations rise out of green-blue waters of a jungle coast">
+          <p class="textpad selection-primary-dark">Zip-line through cloud forest canopies, spot wildlife in Manuel Antonio, and unwind on the Pacific coast after days of adventure.</p>
+          <button class="button bottomgap bg-primary-dark color-primary-light" onclick="alert('To learn more, join Adventura Travel Club!');">Learn More</button>
+        </article>
+        <article class="card">
+          <button class="button bg-primary-em color-primary-light" onclick="alert('To see more adventures, join Adventura Travel Club!');">View All Adventures <span class="bi bi-chevron-compact-right"></span></button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section>
+      <h2 id="benefits">Why Adventura Travel Club?</h2>
+      <ul class="centerlist pad flex column">
+        <li class="flex row color-secondary-dark">
+          <i class="bi bi-gem double" aria-hidden="true"></i>
+          <div>
+            <h3>Curated Adventures</h3>
+            <p class="dynamo">Our team of experts hand-pick and plan unique travel experiences.</p>
+          </div>
+        </li>
+        <li class="flex row">
+          <i class="bi bi-compass double" aria-hidden="true"></i>
+          <div>
+            <h3>Local Experts</h3>
+            <p class="dynamo">Connect with knowledgeable guides who will show you the hidden gems of each destination.</p>
+          </div>
+        </li>
+        <li class="flex row color-secondary-dark">
+          <i class="bi bi-person-check double" aria-hidden="true"></i>
+          <div>
+            <h3>Safety First</h3>
+            <p class="dynamo">Travel with peace of mind knowing that we prioritize your safety on every adventure.</p>
+          </div>
+        </li>
+        <li class="flex row">
+          <i class="bi bi-piggy-bank double" aria-hidden="true"></i>
+          <div>
+            <h3>Exclusive Savings</h3>
+            <p class="dynamo">Members enjoy <a class="link color-primary-em selection-primary-dark" href="#:~:text=Sign%20up%20now%20and%20receive%20a%20%2450%20travel%20voucher%20for%20your%20first%20adventure%21">special discounts and offers</a> on our adventure packages.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+      <h2 id="testimonials">What Our Members Are Saying</h2>
+      <div class="flex row horiz pad">
+        <article class="text-card pad round bg-primary-dark color-primary-light">
+          <p><strong>Adventura completely changed how I see the world.</strong></p>
+          <p>&ldquo;I've traveled solo before, but nothing prepared me for the depth of experience Adventura provides. Our guide in the Dolomites knew trails that didn't appear on any app. By day three, our group of strangers had become lifelong friends.&rdquo;</p>
+          <p><em>&mdash; Sarah K, Dolomites Alpine Trek</em></p>
+        </article>
+        <article class="text-card pad round bg-primary-dark color-primary-light">
+          <p><strong>The $50 voucher got me in the door. The experience kept me coming back.</strong></p>
+          <p>&ldquo;I was skeptical at first&mdash; another travel membership felt like a gimmick. Then I booked the Patagonia trek and realized Adventura is the real thing. Three trips later, I'm already planning my fourth.&rdquo;</p>
+          <p><em>&mdash; Marcus T, End of the World Trek</em></p>
+        </article>
+        <article class="text-card pad round bg-primary-dark color-primary-light">
+          <p><strong>Worth every penny&mdash; and then some.</strong></p>
+          <p>&ldquo;As a couple, we have tried booking adventure trips on our own. The logistics alone were exhausting. Adventura handled everything&mdash; flights, accommodation, guides, gear — so we could just show up and enjoy. Our Morocco trip was flawless.&rdquo;</p>
+          <p><em>&mdash; Priya and James L, Morocco and Medina Immersion</em></p>
+        </article>
+      </div>
+      <div class="flex flex-space row row-collapse pad topgap bg-secondary-dark">
+        <div class="center dynamo">
+          <p class="color-primary-em"><strong class="selection-primary-dark"><i class="bi bi-star-fill inline" aria-label="Stars"></i> 4.9 / 5</strong></p>
+          <p class="tagline color-primary-light">1200+ Member Reviews</p>
+        </div>
+        <div class="center dynamo">
+          <p class="color-primary-em"><strong class="selection-primary-dark">&ldquo;Best Adventure Travel Club&rdquo;</strong></p>
+          <p class="tagline color-primary-light">Wanderlust Awards 2025</p>
+        </div>
+        <div class="center dynamo">
+          <p class="color-primary-em"><strong class="selection-primary-dark"><i class="bi bi-patch-check-fill inline" aria-label="Stars"></i> Certified Gold Member</strong></p>
+          <p class="tagline color-primary-light">Best Business Board</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section class="pad">
+      <h2 id="join">Your Next Adventure Starts Here</h2>
+      <p class="headalign">Ready to explore? Sign up now and receive a <strong>$50 travel voucher</strong> for your first adventure!</p>
+      
+      <!-- Primary form -->
+      <form class="centerlist x-round x-gap bg-secondary-dark color-primary-light" method="GET" action="./submission.html">
+        <h3 class="center pad">Become a Member</h3>
+        <div class="form-fieldset">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-input round bg-primary-light color-primary-dark" type="text" name="name" id="name" placeholder="John Doe" required>
+        </div>
+        <div class="form-fieldset">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input round bg-primary-light color-primary-dark" type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+        </div>
+        <fieldset class="form-fieldset">
+          <legend class="form-label">Travel Interests <em class="light">(optional)</em></legend>
+          <div class="form-control-split">
+            <div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-1" name="interest-1">
+                <label for="interest-1">Hiking & Trekking</label>
+              </div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-2" name="interest-2">
+                <label for="interest-2">Cultural Immersion</label>
+              </div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-3" name="interest-3">
+                <label for="interest-3">Wildlife Safaris</label>
+              </div>
+            </div>
+            <div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-4" name="interest-4">
+                <label for="interest-4">Water Adventures</label>
+              </div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-5" name="interest-5">
+                <label for="interest-5">Cycling & Bike Tours</label>
+              </div>
+              <div class="flex row smallgap">
+                <input class="form-checkbox" type="checkbox" id="interest-6" name="interest-6">
+                <label for="interest-6">Winter & Alpine Expeditions</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <input class="button bg-primary-em color-primary-light" type="submit" value="Join the Club">
+        <div class="infobox light hoverlight">
+          <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+          <p>We respect your privacy. No spam, guaranteed. Unsubscribe anytime.</p>
+        </div>
+      </form>
+
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <nav aria-label="Sitemap navigation">
+      <ul>
+        <div>
+          <li>
+            <a class="link" href="#adventures">Browse Packages</a>
+          </li>
+          <li>
+            <a class="link" href="#benefits">Why Adventura</a>
+          </li>
+          <li>
+            <a class="link" href="#testimonials">Member Stories</a>
+          </li>
+          <li>
+            <a class="link" href="#join">Join the Club</a>
+          </li>
+        </div>
+        <div>
+          <li>
+            <a class="link" href="./">Privacy Policy</a>
+          </li>
+          <li>
+            <a class="link" href="./">Terms of Service</a>
+          </li>
+          <li>
+            <a class="link" href="./">Contact Us</a>
+          </li>
+          <li>
+            <a class="link" href="#top">Back to Top</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+    <ul class="flex flex-align row pad">
+      <li>
+        <a href="#top"><img class="light hoverlight" src="./assets/adventura-travel-club-logo.png" width="55" height="55" alt="Adventura Travel Club logo" title="Official Website"></a>
+      </li>
+      <li>
+        <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/"><i class="bi bi-instagram double light hoverlight" title="Instagram"></i></a>
+      </li>
+      <li>
+        <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/"><i class="bi bi-facebook double light hoverlight" title="Facebook"></i></a>
+      </li>
+      <li>
+        <a target="_blank" rel="noreferrer noopener" href="https://www.youtube.com/"><i class="bi bi-youtube double light hoverlight" title="YouTube"></i></a>
+      </li>
+    </ul>
+    <p><small class="light hoverlight">&copy; 2026 Adventura Travel Club</small></p>
+  </footer>
+  
+</body>
+</html>
